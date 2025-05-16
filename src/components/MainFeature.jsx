@@ -10,6 +10,9 @@ const UserPlusIcon = getIcon('UserPlus');
 const CheckIcon = getIcon('Check');
 const XIcon = getIcon('X');
 const ClockIcon = getIcon('Clock');
+const LayoutGridIcon = getIcon('LayoutGrid');
+const LoaderIcon = getIcon('Loader');
+const RotateCcwIcon = getIcon('RotateCcw');
 
 function MainFeature({ moduleType }) {
   const [attendanceData, setAttendanceData] = useState([]);
@@ -207,7 +210,7 @@ function MainFeature({ moduleType }) {
                 ? 'bg-primary text-white' 
                 : 'bg-surface-100 dark:bg-surface-700 text-surface-700 dark:text-surface-300'}`}
             >
-              <getIcon('LayoutGrid').default className="h-5 w-5" />
+              <LayoutGridIcon className="h-5 w-5" />
             </button>
           </div>
         </div>
@@ -234,7 +237,7 @@ function MainFeature({ moduleType }) {
             >
               {markingInProgress ? (
                 <>
-                  <getIcon('Loader').default className="h-4 w-4 animate-spin" />
+                  <LoaderIcon className="h-4 w-4 animate-spin" />
                   Marking...
                 </>
               ) : (
@@ -248,7 +251,7 @@ function MainFeature({ moduleType }) {
               onClick={resetAttendance}
               className="btn btn-outline text-sm flex items-center gap-1"
             >
-              <getIcon('RotateCcw').default className="h-4 w-4" />
+              <RotateCcwIcon className="h-4 w-4" />
               Reset
             </button>
             <button
