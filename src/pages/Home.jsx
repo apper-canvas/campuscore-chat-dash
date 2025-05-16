@@ -94,8 +94,14 @@ function Home() {
         <div className="w-full md:w-2/3">
           <div className="bg-white dark:bg-surface-800 rounded-xl shadow-card p-6">
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-              {moduleItems.find(item => item.id === selectedModule)?.icon && 
-                <moduleItems.find(item => item.id === selectedModule).icon className="h-5 w-5 text-primary" />}
+              {(() => {
+                const selectedItem = moduleItems.find(item => item.id === selectedModule);
+                if (selectedItem?.icon) {
+                  const IconComponent = selectedItem.icon;
+                  return <IconComponent className="h-5 w-5 text-primary" />;
+                }
+                return null;
+              })()}
               {moduleItems.find(item => item.id === selectedModule)?.name || 'Module'}
             </h2>
             
